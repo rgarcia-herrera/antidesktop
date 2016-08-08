@@ -1,0 +1,80 @@
+
+# en /etc/default/keyboard
+# XKBLAYOUT="us,es"
+# XKBVARIANT=""
+# XKBOPTIONS="ctrl:nocaps,grp:shifts_toggle"
+
+# turn windows key to RatPoison key
+exec setxkbmap -layout us -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31"
+escape F30
+definekey top F31 readkey root
+bind F31 other
+
+
+
+
+# keyboard layout selection 
+bind j exec setxkbmap -layout us -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo us"
+bind h exec setxkbmap -layout es -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo es"
+
+
+
+
+
+# window selection by menu
+bind comma exec ~/bin/rp_window_menu.pl
+
+
+
+
+# call programs
+unbind c
+bind c exec ~/bin/terminal.pl
+bind e exec emacs
+bind E exec firefox
+
+
+
+
+# bind L exec ssh -X rodrigo@apu xscreensaver-command -lock
+
+
+
+# shell to some hosts
+bind F1 exec xterm wicd-curses
+bind F2 exec xterm alsamixer
+bind F3 exec xterm htop
+bind F4 exec xterm -e bash -c "cd ~/musica ; cplay -n"
+bind F5 exec xterm bmon 
+bind F6 exec xterm bwm-ng
+# conky-cli apcupsd moc mpd whowatch sntop logtop saidar ncdu oping iftop
+
+bind F12 exec gksudo -u root pm-suspend
+
+# next group
+unbind N
+bind N gnext 
+
+# previous group
+unbind P
+bind P gprev
+
+# create new group
+bind G gnew
+
+# show groups
+bind g groups 
+
+
+
+
+
+# some decoration
+exec xstarfish -d 336 -s random
+set bgcolor black
+set fgcolor white
+set barpadding 10 10
+set bargravity sw
+set font -*-*-bold-r-*-*-26-*-*-*-*-*-*-*
+banish
+

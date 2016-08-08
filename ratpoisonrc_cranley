@@ -1,0 +1,76 @@
+#
+# infastructure utilities
+#
+bind F1 exec xterm wicd-curses
+bind F2 exec xterm -e "alsamixer -c 0"
+bind F3 exec xterm htop
+bind F4 exec xterm -e bash -c "cd ~/musica ; cplay -n"
+bind F5 exec xterm -e "bmon -p 'wlan0'"
+bind F6 exec xterm bwm-ng
+# maybe trye some of these:
+# conky-cli apcupsd moc mpd whowatch sntop logtop saidar ncdu oping iftop
+
+#
+# poweroff and suspend
+#
+bind F12 exec gksudo -u root -m 'dejar todo en suspenso' pm-suspend
+bind S-F12 exec gksudo -u root -m 'hopefuly poweroff' poweroff
+
+#
+# Menus
+#
+# main
+bind Menu select
+# window selection by menu
+bind comma exec ~/bin/rp_window_menu.pl
+
+
+#
+# grupos de ventanas
+#
+unbind N
+bind N gnext 
+
+unbind P
+bind P gprev
+
+bind G gnew 
+bind g groups 
+
+
+
+# call programs
+unbind c
+bind c exec ~/bin/terminal.pl
+
+bind semicolon exec ~/absorto/env/bin/query_layout.sh
+bind ntilde exec ~/absorto/env/bin/query_layout.sh
+
+bind e exec emacsclient -n -c
+bind E exec emacs
+
+bind o exec killall geeqie ; killall xchat ; killall vlc ; killall xine
+
+bind R restart
+
+
+
+set bgcolor #223
+set fgcolor lightgray
+
+set barborder 0
+set barpadding 1 6
+set bargravity sw
+set inputwidth 1030
+
+
+#
+# ratpoison key is win key
+#
+exec xmodmap -e "keycode 133 = F30"
+escape F30
+
+# en /etc/default/keyboard
+# XKBLAYOUT="us,es"
+# XKBVARIANT=""
+# XKBOPTIONS="ctrl:nocaps,grp:shifts_toggle"

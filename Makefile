@@ -33,5 +33,9 @@ packages: update-apt
 
 emacs: update-apt
 	sudo apt-get build-dep emacs24
-
-
+	wget http://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.xz
+	tar xvfJ emacs-24.5.tar.xz
+	cd emacs-24.5
+	./configure
+	make
+	sudo make install

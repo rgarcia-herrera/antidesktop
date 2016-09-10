@@ -5,12 +5,15 @@ environment:
 	ln -s `pwd`/ratpoisonrc ~/.ratpoisonrc
 	ln -s `pwd`/Xdefaults ~/.Xdefaults
 	ln -s `pwd`/xinitrc ~/.xinitrc
+	ln -s `pwd`/emacs ~/.emacs
 
 clean:
 	rm ~/bin
 	rm ~/.ratpoisonrc
 	rm ~/.Xdefaults
 	rm ~/.xinitrc
+	rm ~/.emacs
+
 
 keyboard:
 	sudo sed -i 's/XKBLAYOUT="latam"/XKBLAYOUT="us,es"/' /etc/default/keyboard

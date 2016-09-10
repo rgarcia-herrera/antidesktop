@@ -31,11 +31,15 @@ packages: update-apt
 	sudo apt-get install sshfs vlc xterm xtermcontrol 9menu ratpoison xstarfish cplay mpg123 byobu wicd wicd-curses wicd-cli apt-file bash-completion xapm arandr iceweasel
 	sudo apt-file update
 
-emacs: update-apt
-	sudo apt-get build-dep emacs24
+
+emacs-24.5.tar.xz:
 	wget http://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.xz
+
+
+emacs-24.5: emacs-24.5.tar.xz
 	tar xvfJ emacs-24.5.tar.xz
-	cd emacs-24.5
-	./configure
-	make
-	sudo make install
+
+
+emacs: update-apt emacs-24.5
+	sudo apt-get build-dep emacs24
+	cd emacs-24.5 ;	./configure ; make ; sudo make install

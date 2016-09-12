@@ -18,3 +18,6 @@ https://elementary.io/docs/human-interface-guidelines#human-interface-guidelines
 http://suckless.org/rocks
 
 
+http://pchristensen.com/wp-content/uploads/2008/02/slimecommands.pdf
+
+https://www.emacswiki.org/emacs/PareditCheatsheet

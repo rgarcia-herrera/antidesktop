@@ -31,7 +31,7 @@ update-apt:
 	sudo apt-get update
 
 packages: update-apt
-	sudo apt-get install sshfs vlc xterm xtermcontrol 9menu ratpoison xstarfish cplay mpg123 byobu wicd wicd-curses wicd-cli apt-file bash-completion xapm arandr iceweasel
+	sudo apt-get install sshfs vlc xterm xtermcontrol 9menu ratpoison xstarfish cplay mpg123 byobu wicd wicd-curses wicd-cli apt-file bash-completion xapm arandr iceweasel sqlite3 libsqlite3-dev inkscape gimp ksnapshot pandoc
 	sudo apt-file update
 
 

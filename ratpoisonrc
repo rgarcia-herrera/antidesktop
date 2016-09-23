@@ -50,6 +50,7 @@ bind F6 exec xterm bwm-ng
 # conky-cli apcupsd moc mpd whowatch sntop logtop saidar ncdu oping iftop
 
 bind F12 exec gksudo -u root pm-suspend
+bind S-F12 exec gksudo -u root poweroff
 
 # next group
 unbind N
@@ -70,7 +71,7 @@ bind g groups
 
 
 # some decoration
-exec xstarfish -d 336 -s random
+exec xstarfish -d 336 -s full
 set bgcolor black
 set fgcolor white
 set barpadding 10 10

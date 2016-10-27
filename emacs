@@ -46,4 +46,4 @@
  ;; If there is more than one, they won't work right.
  )
 
-(global-set-key [C-tab] 'key-binding-test)
+(global-set-key [C-tab] 'other-window)

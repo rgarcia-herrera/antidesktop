@@ -6,22 +6,18 @@
 (require 'ido)
 (ido-mode t)
 
-(package-initialize)
-(elpy-enable)
+;;(package-initialize)
+;; (elpy-enable)
 
 
 ;; Setup load-path, autoloads and your lisp system
 ;; Not needed if you install SLIME via MELPA
-;; (add-to-list 'load-path "~/slime")
-;; (require 'slime-autoloads)
-;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
-
-;; (setq inferior-lisp-program "sbcl")
-;; (setq slime-contribs '(slime-fancy))
-
+(add-to-list 'load-path "~/slime")
+(require 'slime-autoloads)
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
-  ;; Replace "sbcl" with the path to your implementation
-  (setq inferior-lisp-program "sbcl")
+
+(setq inferior-lisp-program "sbcl")
+(setq slime-contribs '(slime-fancy))
 
 
 (custom-set-variables
@@ -45,3 +41,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'narrow-to-region 'disabled nil)
+
+;(define-key function-key-map [C-tab] (kbd "C-x o"))
+
+(global-set-key [C-tab] 'other-window)

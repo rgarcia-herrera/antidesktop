@@ -41,8 +41,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
 (put 'narrow-to-region 'disabled nil)
-
-;(define-key function-key-map [C-tab] (kbd "C-x o"))
-
 (global-set-key [C-tab] 'other-window)
+
+(defun randoname ()
+  (interactive)
+  (insert (format "%07d" (random 10000000))))

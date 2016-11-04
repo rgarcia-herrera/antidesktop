@@ -42,9 +42,11 @@
  ;; If there is more than one, they won't work right.
  )
 
+
 (put 'narrow-to-region 'disabled nil)
 (global-set-key [C-tab] 'other-window)
 
 (defun randoname ()
   (interactive)
   (insert (format "%07d" (random 10000000))))
+

@@ -14,8 +14,8 @@ bind F31 other
 
 
 # keyboard layout selection 
-bind j exec setxkbmap -layout us -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo us"
-bind h exec setxkbmap -layout es -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo es"
+bind ntilde exec setxkbmap -layout us -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo us"
+bind semicolon exec setxkbmap -layout es -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo es"
 
 
 
@@ -30,7 +30,8 @@ bind comma exec ~/bin/rp_window_menu.pl
 # call programs
 unbind c
 bind c exec ~/bin/terminal.pl
-bind e exec emacs
+bind t exec ~/bin/to_term.py
+bind e select emacs@cranley
 bind E exec firefox
 
 
@@ -42,7 +43,8 @@ bind E exec firefox
 
 # shell to some hosts
 bind F1 exec xterm wicd-curses
-bind F2 exec xterm alsamixer
+bind F2 exec pavucontrol
+#alsamixer
 bind F3 exec xterm htop
 bind F4 exec xterm -e bash -c "cd ~/musica ; cplay -n"
 bind F5 exec xterm bmon 
@@ -56,9 +58,11 @@ bind S-F12 exec gksudo -u root poweroff
 unbind N
 bind N gnext 
 
+
 # previous group
 unbind P
 bind P gprev
+
 
 # create new group
 bind G gnew
@@ -67,11 +71,12 @@ bind G gnew
 bind g groups 
 
 
+bind C-Tab nextscreen
 
 
 
 # some decoration
-exec xstarfish -d 336 -s full
+exec xstarfish -s small -d
 set bgcolor black
 set fgcolor white
 set barpadding 10 10

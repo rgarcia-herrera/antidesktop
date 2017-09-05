@@ -4,7 +4,7 @@ XTerm*eightBitInput: true
 
 XTerm*renderFont: true
 XTerm*faceName: mono
-XTerm*faceSize: 10
+XTerm*faceSize: 14
 XTerm*font: 9x15
 XTerm*background: #223
 XTerm*foreground: #bba

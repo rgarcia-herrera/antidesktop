@@ -30,8 +30,8 @@ bind comma exec ~/bin/rp_window_menu.pl
 # call programs
 unbind c
 bind c exec ~/bin/terminal.pl
-bind t exec ~/bin/to_term.py
-bind e select emacs@cranley
+bind XF86Launch5 exec ~/bin/to_term.py
+bind XF86Launch6 select emacs@gandiva
 bind E exec firefox
 
 

@@ -7,8 +7,8 @@
 (require 'ido)
 (ido-mode t)
 
-(package-initialize)
-(elpy-enable)
+;;(package-initialize)
+;; (elpy-enable)
 
 
 ;; Setup load-path, autoloads and your lisp system
@@ -23,6 +23,8 @@
 ;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
   ;; Replace "sbcl" with the path to your implementation
 ;;  (setq inferior-lisp-program "sbcl")
+
+
 
 
 (custom-set-variables
@@ -56,5 +58,13 @@
 (global-set-key [C-tab] 'other-window)
 (put 'narrow-to-region 'disabled nil)
 
-
 (add-hook 'before-save-hook 'whitespace-cleanup)
+
+(put 'narrow-to-region 'disabled nil)
+(global-set-key [C-tab] 'other-window)
+
+(defun randoname ()
+  (interactive)
+  (insert (format "%07d" (random 10000000))))
+
+

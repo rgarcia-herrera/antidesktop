@@ -30,7 +30,8 @@ bind comma exec ~/bin/rp_window_menu.pl
 # call programs
 unbind c
 bind c exec ~/bin/terminal.pl
-bind e exec emacs
+bind XF86Launch5 exec ~/bin/to_term.py
+bind XF86Launch6 select emacs@gandiva
 bind E exec firefox
 
 
@@ -42,7 +43,8 @@ bind E exec firefox
 
 # shell to some hosts
 bind F1 exec xterm wicd-curses
-bind F2 exec xterm alsamixer
+bind F2 exec pavucontrol
+#alsamixer
 bind F3 exec xterm htop
 bind F4 exec xterm -e bash -c "cd ~/musica ; cplay -n"
 bind F5 exec xterm bmon 
@@ -57,9 +59,11 @@ bind S-F12 exec gksudo -u root poweroff
 unbind N
 bind N gnext 
 
+
 # previous group
 unbind P
 bind P gprev
+
 
 # create new group
 bind G gnew
@@ -68,13 +72,16 @@ bind G gnew
 bind g groups 
 
 
+
 # multiple monitors
-bind s-Tab nextscreen
+# bind s-Tab nextscreen
 # bind S-Left prevscreen
+bind C-Tab nextscreen
+
 
 
 # some decoration
-exec xstarfish -d 336 -s full
+exec xstarfish -s small -d
 set bgcolor black
 set fgcolor white
 set barpadding 10 10

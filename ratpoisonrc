@@ -14,8 +14,8 @@ bind F31 other
 
 
 # keyboard layout selection 
-bind j exec setxkbmap -layout us -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo us"
-bind h exec setxkbmap -layout es -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo es"
+bind ntilde exec setxkbmap -layout us -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo us"
+bind semicolon exec setxkbmap -layout es -option ctrl:nocaps ; xmodmap -e "keycode 133 = F30" ; xmodmap -e "keycode 134 = F31" ; ratpoison -c "echo es"
 
 
 
@@ -46,7 +46,8 @@ bind F2 exec xterm alsamixer
 bind F3 exec xterm htop
 bind F4 exec xterm -e bash -c "cd ~/musica ; cplay -n"
 bind F5 exec xterm bmon 
-bind F6 exec xterm bwm-ng
+bind F6 exec xterm -e ssh -XC rgarcia@patung
+bind F7 exec xterm -e ssh -XC rgarcia@toho.mine.nu
 # conky-cli apcupsd moc mpd whowatch sntop logtop saidar ncdu oping iftop
 
 bind F12 exec gksudo -u root pm-suspend
@@ -67,7 +68,9 @@ bind G gnew
 bind g groups 
 
 
-
+# multiple monitors
+bind s-Tab nextscreen
+# bind S-Left prevscreen
 
 
 # some decoration
